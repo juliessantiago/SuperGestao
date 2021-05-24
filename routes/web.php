@@ -2,24 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return 'Bem vindo!'; 
-});
-
-Route::get('/sobrenos', function () {
-    return 'Página Sobre Nós'; 
-});
-Route::get('/contato', function () {
-    return 'Contato'; 
-});
+Route::get('/', 'PrincipalController@principal');/*Ao receber como segundo parâmetro uma string, o Laravel
+entende que estamos passando um controlador e uma action*/ 
+//nome da classe @ nome do método 
+Route::get('/sobrenos', 'SobrenosController@sobre');
+Route::get('/contato', 'ContatoController@contato');
